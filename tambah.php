@@ -28,7 +28,12 @@ if (!isset($_SESSION['sess_id'])) {
       <div class="col-7 mx-auto">
         <div class="card">
           <div class="card-body">
-            <form action="cek_login.php" method="post" onsubmit="return validasi(this)">
+            <form action="tambah_data.php" method="post">
+              <div class="form-group">
+                <label for="kode">Kode Praktikum</label>
+                <input type="text" class="form-control" id="kode" name="kode" placeholder="Masukan Kode praktikum">
+                <small id="v_kode" class="text-danger"></small>
+              </div>
               <div class="form-group">
                 <label for="nama">Nama Praktikum</label>
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukan Nama kamu">
@@ -52,7 +57,7 @@ if (!isset($_SESSION['sess_id'])) {
                 </select>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+                <button type="submit" class="btn btn-primary btn-block">Tambah</button>
               </div>
             </form>
           </div>
@@ -62,35 +67,35 @@ if (!isset($_SESSION['sess_id'])) {
   </div>
 
   <script>
-    const validasi = function(x) {
-      var v_nim = document.getElementById('v_nim');
-      var v_email = document.getElementById('v_email');
+    // const validasi = function(x) {
+    //   var v_nim = document.getElementById('v_nim');
+    //   var v_email = document.getElementById('v_email');
 
-      var regex_number = /[0-9]/g
-      var regex_char = /[a-zA-Z]/g
+    //   var regex_number = /[0-9]/g
+    //   var regex_char = /[a-zA-Z]/g
 
-      if (x.nim.value == "" || x.nim.value.test(regex_char)) {
-        v_nim.innerText = "Bermasalah pada kolom NIM";
-        Swal.file('Ops...', 'masih ada yang salah!', 'error');
-        return false;
-      } else {
-        v_nim.innerText = "";
-      }
+    //   if (x.nim.value == "" || x.nim.value.test(regex_char)) {
+    //     v_nim.innerText = "Bermasalah pada kolom NIM";
+    //     Swal.file('Ops...', 'masih ada yang salah!', 'error');
+    //     return false;
+    //   } else {
+    //     v_nim.innerText = "";
+    //   }
 
-      if (x.email.value == "") {
-        v_email.innerText = "Bermasalah pada kolom Email";
-        Swal.file('Ops...', 'masih ada yang salah!', 'error');
-        return false;
-      } else {
-        v_email.innerText = "";
-      }
+    //   if (x.email.value == "") {
+    //     v_email.innerText = "Bermasalah pada kolom Email";
+    //     Swal.file('Ops...', 'masih ada yang salah!', 'error');
+    //     return false;
+    //   } else {
+    //     v_email.innerText = "";
+    //   }
 
-      if (syarat == 2) {
-        return true;
-      } else {
-        return false;
-      }
-    }
+    //   if (syarat == 2) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
   </script>
 
   <!-- Optional JavaScript -->
